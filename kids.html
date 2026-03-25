@@ -40,7 +40,665 @@
       </div>
       <div class="subsection-content">
         <p>Illustrated stories, picture books, and age-appropriate readings that introduce children to the life of the Virgin Mary, the saints, and the teachings of the Church in joyful and accessible ways.</p>
-        <span class="placeholder-tag">✦ Add Kids' Books Here</span>
+        <span class="placeholder-tag"><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Happy Family!</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #FFD93D;
+    --orange: #FF6B35;
+    --pink: #FF6B9D;
+    --purple: #C77DFF;
+    --blue: #4CC9F0;
+    --green: #6BCB77;
+    --red: #FF595E;
+    --light-yellow: #FFF5CC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: linear-gradient(135deg, #FFE0F0 0%, #E0F4FF 50%, #E8FFE0 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Baloo 2', cursive;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+
+  .book-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .book {
+    background: white;
+    border-radius: 28px;
+    box-shadow:
+      0 20px 60px rgba(0,0,0,0.18),
+      0 0 0 6px white,
+      0 0 0 10px rgba(255,107,157,0.3);
+    overflow: hidden;
+    position: relative;
+    min-height: 520px;
+  }
+
+  .page {
+    display: none;
+    width: 100%;
+    min-height: 520px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 36px;
+    position: relative;
+    animation: pageFlip 0.4s ease;
+  }
+
+  .page.active { display: flex; }
+
+  @keyframes pageFlip {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* ── Page backgrounds ── */
+  .page-cover   { background: linear-gradient(160deg, #FFD93D 0%, #FF6B9D 60%, #C77DFF 100%); }
+  .page-1  { background: linear-gradient(160deg, #E0F4FF 0%, #B5E8FF 100%); }
+  .page-2  { background: linear-gradient(160deg, #FFF0E0 0%, #FFD6A5 100%); }
+  .page-3  { background: linear-gradient(160deg, #E8FFE8 0%, #B5F5B5 100%); }
+  .page-4  { background: linear-gradient(160deg, #F5E0FF 0%, #DDB5FF 100%); }
+  .page-5  { background: linear-gradient(160deg, #E0F8FF 0%, #A8E6F0 100%); }
+  .page-6  { background: linear-gradient(160deg, #FFF0F5 0%, #FFB5CC 100%); }
+  .page-last{ background: linear-gradient(160deg, #FFFBE0 0%, #FFD93D 100%); }
+
+  /* ── Title text ── */
+  .title-big {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    line-height: 1.15;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 4px 0 rgba(0,0,0,0.15);
+    margin-bottom: 8px;
+    z-index: 2;
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    font-weight: 600;
+    z-index: 2;
+    margin-bottom: 6px;
+  }
+
+  .page-text {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(1.3rem, 4.5vw, 1.85rem);
+    text-align: center;
+    line-height: 1.45;
+    z-index: 2;
+    max-width: 90%;
+    margin-bottom: 12px;
+  }
+
+  .page-subtext {
+    font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+    text-align: center;
+    font-weight: 600;
+    z-index: 2;
+    max-width: 85%;
+    opacity: 0.85;
+  }
+
+  .illustration { z-index: 2; margin: 14px 0; }
+
+  /* Decorative dots / stars */
+  .deco {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.25;
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  /* ── Navigation ── */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 22px;
+  }
+
+  .btn {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.18);
+    letter-spacing: 0.02em;
+  }
+
+  .btn:active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(0,0,0,0.18); }
+  .btn:hover  { transform: translateY(-2px); box-shadow: 0 8px 0 rgba(0,0,0,0.15); }
+
+  .btn-prev { background: var(--purple); color: white; }
+  .btn-next { background: var(--orange); color: white; }
+  .btn-next:disabled, .btn-prev:disabled { opacity: 0.3; cursor: default; transform: none; }
+
+  .page-dots {
+    display: flex; gap: 8px; align-items: center;
+  }
+  .dot {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+  }
+  .dot.active { background: var(--pink); transform: scale(1.4); }
+
+  .page-num {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  /* Stars scattered on cover */
+  .star { position: absolute; font-size: 1.6rem; animation: spin 6s linear infinite; opacity: 0.7; }
+  @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+</style>
+</head>
+<body>
+
+<div class="book-wrapper">
+  <div class="book" id="book">
+
+    <!-- ══ COVER ══ -->
+    <div class="page page-cover active" id="page-0">
+      <div class="star" style="top:10%;left:8%;animation-duration:7s">⭐</div>
+      <div class="star" style="top:15%;right:10%;animation-duration:5s">🌟</div>
+      <div class="star" style="bottom:20%;left:12%;animation-duration:9s">✨</div>
+      <div class="star" style="bottom:12%;right:8%;animation-duration:6s">⭐</div>
+
+      <svg class="illustration" width="220" height="160" viewBox="0 0 220 160">
+        <!-- Sun -->
+        <circle cx="110" cy="50" r="32" fill="#FFD93D" opacity="0.95"/>
+        <circle cx="110" cy="50" r="22" fill="#FFB800"/>
+        <!-- Sun rays -->
+        <g stroke="#FFD93D" stroke-width="4" stroke-linecap="round" opacity="0.8">
+          <line x1="110" y1="5" x2="110" y2="15"/>
+          <line x1="110" y1="85" x2="110" y2="95"/>
+          <line x1="65" y1="50" x2="75" y2="50"/>
+          <line x1="145" y1="50" x2="155" y2="50"/>
+          <line x1="78" y1="18" x2="85" y2="25"/>
+          <line x1="135" y1="75" x2="142" y2="82"/>
+          <line x1="142" y1="18" x2="135" y2="25"/>
+          <line x1="78" y1="75" x2="85" y2="82"/>
+        </g>
+        <!-- House -->
+        <polygon points="60,130 60,85 110,55 160,85 160,130" fill="#FF6B35" opacity="0.9"/>
+        <polygon points="55,90 110,52 165,90" fill="#FF4500" opacity="0.9"/>
+        <rect x="85" y="100" width="22" height="30" rx="4" fill="#4CC9F0"/>
+        <rect x="115" y="98" width="20" height="18" rx="3" fill="#FFD93D"/>
+        <!-- Hearts floating -->
+        <text x="30" y="75" font-size="20" fill="#FF6B9D">❤️</text>
+        <text x="170" y="75" font-size="18" fill="#C77DFF">💜</text>
+        <text x="10" y="115" font-size="16" fill="#FF6B35">🧡</text>
+        <text x="190" y="115" font-size="16" fill="#6BCB77">💚</text>
+      </svg>
+
+      <div class="title-big">Our Happy Family!</div>
+      <div class="subtitle">A book about love, laughter &amp; fun together 💛</div>
+    </div>
+
+    <!-- ══ PAGE 1 ══ -->
+    <div class="page page-1" id="page-1">
+      <div class="deco" style="width:80px;height:80px;background:#4CC9F0;top:-20px;right:-20px;"></div>
+      <div class="deco" style="width:50px;height:50px;background:#FF6B9D;bottom:30px;left:10px;animation-delay:1s"></div>
+
+      <div class="page-text" style="color:#1a6fa8;">A family is people who love each other! 💕</div>
+
+      <svg class="illustration" width="300" height="190" viewBox="0 0 300 190">
+        <!-- Ground -->
+        <ellipse cx="150" cy="185" rx="140" ry="12" fill="#B5E8B5" opacity="0.5"/>
+
+        <!-- Dad -->
+        <circle cx="70" cy="55" r="26" fill="#FFDAB5"/>
+        <rect x="44" y="80" width="52" height="68" rx="12" fill="#4CC9F0"/>
+        <!-- dad hair -->
+        <path d="M44 50 Q70 25 96 50" fill="#5C3A1E" opacity="0.8"/>
+        <!-- dad eyes -->
+        <circle cx="60" cy="52" r="5" fill="white"/><circle cx="60" cy="52" r="3" fill="#333"/>
+        <circle cx="80" cy="52" r="5" fill="white"/><circle cx="80" cy="52" r="3" fill="#333"/>
+        <path d="M58 66 Q70 74 82 66" stroke="#FF7043" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- dad arms -->
+        <line x1="44" y1="100" x2="22" y2="125" stroke="#FFDAB5" stroke-width="12" stroke-linecap="round"/>
+        <line x1="96" y1="100" x2="118" y2="125" stroke="#FFDAB5" stroke-width="12" stroke-linecap="round"/>
+
+        <!-- Mom -->
+        <circle cx="230" cy="55" r="26" fill="#FFD0C0"/>
+        <rect x="204" y="80" width="52" height="68" rx="12" fill="#FF6B9D"/>
+        <!-- mom hair -->
+        <path d="M204 45 Q230 18 256 45 L258 70 Q230 85 202 70Z" fill="#8B4513" opacity="0.75"/>
+        <!-- mom eyes -->
+        <circle cx="220" cy="52" r="5" fill="white"/><circle cx="220" cy="52" r="3" fill="#333"/>
+        <circle cx="240" cy="52" r="5" fill="white"/><circle cx="240" cy="52" r="3" fill="#333"/>
+        <path d="M218 66 Q230 74 242 66" stroke="#FF7043" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- mom arms -->
+        <line x1="204" y1="100" x2="182" y2="125" stroke="#FFD0C0" stroke-width="12" stroke-linecap="round"/>
+        <line x1="256" y1="100" x2="278" y2="125" stroke="#FFD0C0" stroke-width="12" stroke-linecap="round"/>
+
+        <!-- Kid in middle -->
+        <circle cx="150" cy="80" r="22" fill="#FFEAA0"/>
+        <rect x="128" y="102" width="44" height="56" rx="10" fill="#6BCB77"/>
+        <!-- kid hair -->
+        <path d="M128 70 Q150 48 172 70" fill="#4a2f0d" opacity="0.75"/>
+        <!-- kid eyes -->
+        <circle cx="141" cy="77" r="5" fill="white"/><circle cx="141" cy="77" r="3" fill="#333"/>
+        <circle cx="159" cy="77" r="5" fill="white"/><circle cx="159" cy="77" r="3" fill="#333"/>
+        <path d="M139 91 Q150 99 161 91" stroke="#FF7043" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- arms holding hands -->
+        <line x1="128" y1="118" x2="96" y2="130" stroke="#FFEAA0" stroke-width="10" stroke-linecap="round"/>
+        <line x1="172" y1="118" x2="182" y2="130" stroke="#FFEAA0" stroke-width="10" stroke-linecap="round"/>
+
+        <!-- Hearts -->
+        <text x="108" y="135" font-size="18" fill="#FF6B9D">❤️</text>
+        <text x="168" y="135" font-size="18" fill="#FF6B9D">❤️</text>
+      </svg>
+
+      <div class="page-subtext" style="color:#2a8fd4;">Moms, dads, brothers, sisters, grandmas, grandpas — everyone who makes you feel warm inside! 🤗</div>
+    </div>
+
+    <!-- ══ PAGE 2 ══ -->
+    <div class="page page-2" id="page-2">
+      <div class="deco" style="width:70px;height:70px;background:#FF6B35;top:-10px;left:-10px;animation-delay:0.5s"></div>
+      <div class="deco" style="width:55px;height:55px;background:#FFD93D;bottom:20px;right:10px;animation-delay:2s"></div>
+
+      <div class="page-text" style="color:#c04d00;">We play together! 🎮🎨⚽</div>
+
+      <svg class="illustration" width="300" height="195" viewBox="0 0 300 195">
+        <!-- Ground -->
+        <ellipse cx="150" cy="190" rx="145" ry="12" fill="#90EE90" opacity="0.5"/>
+
+        <!-- Ball -->
+        <circle cx="150" cy="155" r="22" fill="white" stroke="#333" stroke-width="2"/>
+        <path d="M138 145 Q150 138 162 145 Q168 155 162 165 Q150 172 138 165 Q132 155 138 145" fill="#333" opacity="0.15"/>
+
+        <!-- Child 1 kicking -->
+        <circle cx="75" cy="80" r="24" fill="#FFEAA0"/>
+        <rect x="54" y="103" width="42" height="55" rx="10" fill="#FF6B35"/>
+        <path d="M53 75 Q75 50 97 75" fill="#5C3A1E" opacity="0.7"/>
+        <circle cx="66" cy="77" r="5" fill="white"/><circle cx="66" cy="77" r="3" fill="#222"/>
+        <circle cx="84" cy="77" r="5" fill="white"/><circle cx="84" cy="77" r="3" fill="#222"/>
+        <path d="M64 91 Q75 99 86 91" stroke="#FF7043" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- leg kicking -->
+        <line x1="54" y1="145" x2="32" y2="170" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+        <line x1="96" y1="145" x2="118" y2="160" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+        <!-- arm up -->
+        <line x1="54" y1="115" x2="30" y2="100" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+        <line x1="96" y1="115" x2="120" y2="100" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+
+        <!-- Child 2 -->
+        <circle cx="225" cy="80" r="24" fill="#FFD0C0"/>
+        <rect x="204" y="103" width="42" height="55" rx="10" fill="#C77DFF"/>
+        <path d="M204 70 Q225 44 246 70 L248 90 Q225 105 202 90Z" fill="#8B4513" opacity="0.7"/>
+        <circle cx="216" cy="77" r="5" fill="white"/><circle cx="216" cy="77" r="3" fill="#222"/>
+        <circle cx="234" cy="77" r="5" fill="white"/><circle cx="234" cy="77" r="3" fill="#222"/>
+        <path d="M214 91 Q225 99 236 91" stroke="#FF7043" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <line x1="204" y1="145" x2="182" y2="168" stroke="#FFD0C0" stroke-width="11" stroke-linecap="round"/>
+        <line x1="246" y1="145" x2="268" y2="162" stroke="#FFD0C0" stroke-width="11" stroke-linecap="round"/>
+        <line x1="204" y1="115" x2="178" y2="100" stroke="#FFD0C0" stroke-width="11" stroke-linecap="round"/>
+        <line x1="246" y1="115" x2="272" y2="100" stroke="#FFD0C0" stroke-width="11" stroke-linecap="round"/>
+
+        <!-- Stars of joy -->
+        <text x="10" y="60" font-size="22">⭐</text>
+        <text x="268" y="55" font-size="20">🌟</text>
+        <text x="135" y="30" font-size="18">✨</text>
+      </svg>
+
+      <div class="page-subtext" style="color:#b34000;">Playing games with family is so much fun! Tag, soccer, board games — let's play ALL day! 😄</div>
+    </div>
+
+    <!-- ══ PAGE 3 ══ -->
+    <div class="page page-3" id="page-3">
+      <div class="deco" style="width:65px;height:65px;background:#6BCB77;top:-10px;right:30px;animation-delay:0.8s"></div>
+      <div class="deco" style="width:45px;height:45px;background:#FF6B9D;bottom:25px;left:20px;animation-delay:1.5s"></div>
+
+      <div class="page-text" style="color:#1a7a2a;">We eat together! 🍕🥗🍰</div>
+
+      <svg class="illustration" width="300" height="195" viewBox="0 0 300 195">
+        <!-- Table -->
+        <rect x="40" y="130" width="220" height="18" rx="9" fill="#8B6914"/>
+        <rect x="55" y="148" width="14" height="40" rx="6" fill="#6B4F10"/>
+        <rect x="231" y="148" width="14" height="40" rx="6" fill="#6B4F10"/>
+
+        <!-- Plates & food -->
+        <ellipse cx="100" cy="128" rx="32" ry="10" fill="#f0f0f0" stroke="#ddd" stroke-width="2"/>
+        <!-- pizza slice -->
+        <polygon points="100,105 80,128 120,128" fill="#FF6B35"/>
+        <circle cx="92" cy="120" r="3" fill="#c0392b"/>
+        <circle cx="105" cy="116" r="3" fill="#c0392b"/>
+        <circle cx="100" cy="124" r="2.5" fill="#27ae60"/>
+
+        <ellipse cx="200" cy="128" rx="32" ry="10" fill="#f0f0f0" stroke="#ddd" stroke-width="2"/>
+        <!-- cake slice -->
+        <rect x="182" y="108" width="36" height="20" rx="4" fill="#FF6B9D"/>
+        <rect x="182" y="105" width="36" height="6" rx="3" fill="#FFD93D"/>
+        <circle cx="200" cy="100" r="4" fill="#FF6B35"/>
+        <rect x="199" y="92" width="2" height="10" fill="#FF6B9D"/>
+
+        <!-- Cup -->
+        <rect x="143" y="108" width="14" height="22" rx="5" fill="#4CC9F0"/>
+        <ellipse cx="150" cy="108" rx="7" ry="3" fill="#87DDFF"/>
+
+        <!-- Family members at table -->
+        <!-- Dad left -->
+        <circle cx="62" cy="85" r="20" fill="#FFDAB5"/>
+        <path d="M43 80 Q62 58 81 80" fill="#5C3A1E" opacity="0.7"/>
+        <circle cx="54" cy="83" r="4" fill="white"/><circle cx="54" cy="83" r="2.5" fill="#222"/>
+        <circle cx="70" cy="83" r="4" fill="white"/><circle cx="70" cy="83" r="2.5" fill="#222"/>
+        <path d="M52 95 Q62 102 72 95" stroke="#FF7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <line x1="42" y1="104" x2="30" y2="122" stroke="#FFDAB5" stroke-width="9" stroke-linecap="round"/>
+        <line x1="82" y1="104" x2="94" y2="122" stroke="#FFDAB5" stroke-width="9" stroke-linecap="round"/>
+
+        <!-- Mom right -->
+        <circle cx="238" cy="85" r="20" fill="#FFD0C0"/>
+        <path d="M218 75 Q238 50 258 75 L260 93 Q238 107 216 93Z" fill="#8B4513" opacity="0.7"/>
+        <circle cx="230" cy="83" r="4" fill="white"/><circle cx="230" cy="83" r="2.5" fill="#222"/>
+        <circle cx="246" cy="83" r="4" fill="white"/><circle cx="246" cy="83" r="2.5" fill="#222"/>
+        <path d="M228 95 Q238 102 248 95" stroke="#FF7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <line x1="218" y1="104" x2="206" y2="122" stroke="#FFD0C0" stroke-width="9" stroke-linecap="round"/>
+        <line x1="258" y1="104" x2="270" y2="122" stroke="#FFD0C0" stroke-width="9" stroke-linecap="round"/>
+
+        <!-- Kid middle -->
+        <circle cx="150" cy="78" r="18" fill="#FFEAA0"/>
+        <path d="M133 72 Q150 52 167 72" fill="#4a2f0d" opacity="0.7"/>
+        <circle cx="143" cy="76" r="4" fill="white"/><circle cx="143" cy="76" r="2.5" fill="#222"/>
+        <circle cx="157" cy="76" r="4" fill="white"/><circle cx="157" cy="76" r="2.5" fill="#222"/>
+        <path d="M141 88 Q150 95 159 88" stroke="#FF7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <div class="page-subtext" style="color:#1a7a2a;">Yummy food tastes even better when you share it with family! "More pizza, please!" 🍕😋</div>
+    </div>
+
+    <!-- ══ PAGE 4 ══ -->
+    <div class="page page-4" id="page-4">
+      <div class="deco" style="width:75px;height:75px;background:#C77DFF;top:0;left:-15px;animation-delay:0.3s"></div>
+      <div class="deco" style="width:50px;height:50px;background:#4CC9F0;bottom:15px;right:-10px;animation-delay:2s"></div>
+
+      <div class="page-text" style="color:#6a00b5;">We read together! 📚✨</div>
+
+      <svg class="illustration" width="290" height="195" viewBox="0 0 290 195">
+        <!-- Cozy sofa -->
+        <rect x="20" y="130" width="250" height="50" rx="18" fill="#9B59B6"/>
+        <rect x="20" y="115" width="20" height="65" rx="10" fill="#8E44AD"/>
+        <rect x="250" y="115" width="20" height="65" rx="10" fill="#8E44AD"/>
+        <rect x="20" y="118" width="250" height="22" rx="11" fill="#B87FD8"/>
+
+        <!-- Open book -->
+        <rect x="108" y="108" width="74" height="48" rx="5" fill="white" stroke="#C77DFF" stroke-width="2"/>
+        <line x1="145" y1="108" x2="145" y2="156" stroke="#C77DFF" stroke-width="2"/>
+        <!-- book lines -->
+        <line x1="116" y1="120" x2="138" y2="120" stroke="#ddd" stroke-width="2"/>
+        <line x1="116" y1="128" x2="138" y2="128" stroke="#ddd" stroke-width="2"/>
+        <line x1="116" y1="136" x2="138" y2="136" stroke="#ddd" stroke-width="2"/>
+        <line x1="116" y1="144" x2="138" y2="144" stroke="#ddd" stroke-width="2"/>
+        <line x1="152" y1="120" x2="174" y2="120" stroke="#ddd" stroke-width="2"/>
+        <line x1="152" y1="128" x2="174" y2="128" stroke="#ddd" stroke-width="2"/>
+        <line x1="152" y1="136" x2="174" y2="136" stroke="#ddd" stroke-width="2"/>
+
+        <!-- Parent reading -->
+        <circle cx="90" cy="80" r="26" fill="#FFD0C0"/>
+        <path d="M64 72 Q90 44 116 72 L118 92 Q90 108 62 92Z" fill="#8B4513" opacity="0.7"/>
+        <circle cx="80" cy="77" r="5.5" fill="white"/><circle cx="80" cy="77" r="3" fill="#222"/>
+        <circle cx="100" cy="77" r="5.5" fill="white"/><circle cx="100" cy="77" r="3" fill="#222"/>
+        <path d="M78 92 Q90 100 102 92" stroke="#FF7043" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="64" y="105" width="52" height="60" rx="12" fill="#FF6B9D"/>
+        <line x1="64" y1="118" x2="44" y2="140" stroke="#FFD0C0" stroke-width="12" stroke-linecap="round"/>
+        <line x1="116" y1="118" x2="136" y2="108" stroke="#FFD0C0" stroke-width="12" stroke-linecap="round"/>
+
+        <!-- Kid snuggled -->
+        <circle cx="198" cy="88" r="22" fill="#FFEAA0"/>
+        <path d="M178 80 Q198 58 218 80" fill="#4a2f0d" opacity="0.7"/>
+        <circle cx="190" cy="85" r="5" fill="white"/><circle cx="190" cy="85" r="3" fill="#222"/>
+        <circle cx="206" cy="85" r="5" fill="white"/><circle cx="206" cy="85" r="3" fill="#222"/>
+        <path d="M188 99 Q198 107 208 99" stroke="#FF7043" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="176" y="110" width="44" height="55" rx="10" fill="#4CC9F0"/>
+        <line x1="176" y1="125" x2="152" y2="118" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+        <line x1="220" y1="125" x2="242" y2="140" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+
+        <!-- Stars -->
+        <text x="20" y="50" font-size="20">⭐</text>
+        <text x="255" y="45" font-size="18">🌟</text>
+        <text x="138" y="95" font-size="16">💜</text>
+      </svg>
+
+      <div class="page-subtext" style="color:#7a00d4;">Snuggled up close, reading a story — it's the coziest feeling in the world! 💜📖</div>
+    </div>
+
+    <!-- ══ PAGE 5 ══ -->
+    <div class="page page-5" id="page-5">
+      <div class="deco" style="width:80px;height:80px;background:#4CC9F0;top:-20px;right:-20px;animation-delay:1s"></div>
+      <div class="deco" style="width:55px;height:55px;background:#6BCB77;bottom:10px;left:5px;animation-delay:0.5s"></div>
+
+      <div class="page-text" style="color:#006494;">We go on adventures! 🌳🏖️⛺</div>
+
+      <svg class="illustration" width="310" height="195" viewBox="0 0 310 195">
+        <!-- Sky -->
+        <rect x="0" y="0" width="310" height="130" rx="12" fill="#87CEEB" opacity="0.45"/>
+        <!-- Clouds -->
+        <ellipse cx="60" cy="30" rx="38" ry="18" fill="white" opacity="0.85"/>
+        <ellipse cx="82" cy="22" rx="24" ry="16" fill="white" opacity="0.85"/>
+        <ellipse cx="250" cy="25" rx="35" ry="15" fill="white" opacity="0.85"/>
+        <ellipse cx="270" cy="18" rx="22" ry="14" fill="white" opacity="0.85"/>
+
+        <!-- Mountains -->
+        <polygon points="0,130 60,55 120,130" fill="#5B8A5B" opacity="0.7"/>
+        <polygon points="80,130 155,45 230,130" fill="#4a7a4a" opacity="0.8"/>
+        <polygon points="180,130 255,60 310,130" fill="#5B8A5B" opacity="0.7"/>
+        <!-- Snow tops -->
+        <polygon points="155,45 143,70 167,70" fill="white" opacity="0.8"/>
+
+        <!-- Ground -->
+        <rect x="0" y="130" width="310" height="65" fill="#90EE90" opacity="0.7"/>
+
+        <!-- Tent -->
+        <polygon points="15,190 60,110 105,190" fill="#FF6B35"/>
+        <polygon points="35,190 60,130 85,190" fill="#FFD93D"/>
+
+        <!-- Tree -->
+        <rect x="240" y="130" width="10" height="40" fill="#8B4513"/>
+        <polygon points="245,80 220,135 270,135" fill="#2E8B22"/>
+        <polygon points="245,65 224,118 266,118" fill="#3CB328"/>
+
+        <!-- Family walking -->
+        <!-- Dad -->
+        <circle cx="150" cy="108" r="20" fill="#FFDAB5"/>
+        <rect x="130" y="128" width="40" height="45" rx="9" fill="#4CC9F0"/>
+        <path d="M130 102 Q150 82 170 102" fill="#5C3A1E" opacity="0.7"/>
+        <circle cx="141" cy="105" r="4.5" fill="white"/><circle cx="141" cy="105" r="3" fill="#222"/>
+        <circle cx="159" cy="105" r="4.5" fill="white"/><circle cx="159" cy="105" r="3" fill="#222"/>
+        <path d="M139 118 Q150 125 161 118" stroke="#FF7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <line x1="130" y1="140" x2="112" y2="158" stroke="#FFDAB5" stroke-width="10" stroke-linecap="round"/>
+        <line x1="170" y1="140" x2="188" y2="158" stroke="#FFDAB5" stroke-width="10" stroke-linecap="round"/>
+
+        <!-- Kid holding hand -->
+        <circle cx="200" cy="120" r="17" fill="#FFEAA0"/>
+        <rect x="183" y="136" width="34" height="38" rx="8" fill="#FF6B9D"/>
+        <path d="M183 115 Q200 96 217 115" fill="#4a2f0d" opacity="0.7"/>
+        <circle cx="193" cy="118" r="4" fill="white"/><circle cx="193" cy="118" r="2.5" fill="#222"/>
+        <circle cx="207" cy="118" r="4" fill="white"/><circle cx="207" cy="118" r="2.5" fill="#222"/>
+        <path d="M191 129 Q200 136 209 129" stroke="#FF7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- hands joined -->
+        <line x1="183" y1="148" x2="170" y2="155" stroke="#FFEAA0" stroke-width="9" stroke-linecap="round"/>
+        <line x1="217" y1="148" x2="232" y2="163" stroke="#FFEAA0" stroke-width="9" stroke-linecap="round"/>
+
+        <!-- sun top right -->
+        <circle cx="290" cy="25" r="22" fill="#FFD93D" opacity="0.95"/>
+      </svg>
+
+      <div class="page-subtext" style="color:#005b7a;">Family adventures are the BEST! Hiking, beach trips, camping — every trip is a new memory! 🌍✨</div>
+    </div>
+
+    <!-- ══ PAGE 6 ══ -->
+    <div class="page page-6" id="page-6">
+      <div class="deco" style="width:70px;height:70px;background:#FF6B9D;top:-10px;left:20px;animation-delay:0.7s"></div>
+      <div class="deco" style="width:55px;height:55px;background:#FFD93D;bottom:20px;right:15px;animation-delay:1.3s"></div>
+
+      <div class="page-text" style="color:#b5004a;">We laugh and dance! 🎵💃🕺</div>
+
+      <svg class="illustration" width="300" height="200" viewBox="0 0 300 200">
+        <!-- Music notes floating -->
+        <text x="15" y="55" font-size="28" fill="#FF6B9D" opacity="0.7">🎵</text>
+        <text x="255" y="45" font-size="24" fill="#C77DFF" opacity="0.7">🎶</text>
+        <text x="135" y="30" font-size="20" fill="#FFD93D" opacity="0.8">♪</text>
+        <text x="50" y="30" font-size="18" fill="#4CC9F0" opacity="0.7">♫</text>
+        <text x="220" y="30" font-size="18" fill="#6BCB77" opacity="0.7">♪</text>
+
+        <!-- Ground line -->
+        <ellipse cx="150" cy="194" rx="140" ry="10" fill="#FFB5CC" opacity="0.4"/>
+
+        <!-- Dancing person 1 -->
+        <circle cx="80" cy="68" r="25" fill="#FFDAB5"/>
+        <path d="M55 60 Q80 36 105 60" fill="#5C3A1E" opacity="0.7"/>
+        <circle cx="70" cy="65" r="5" fill="white"/><circle cx="70" cy="65" r="3" fill="#222"/>
+        <circle cx="90" cy="65" r="5" fill="white"/><circle cx="90" cy="65" r="3" fill="#222"/>
+        <path d="M68 80 Q80 89 92 80" stroke="#FF7043" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="58" y="92" width="44" height="58" rx="11" fill="#FF6B35"/>
+        <!-- dancing arms up -->
+        <line x1="58" y1="108" x2="28" y2="82" stroke="#FFDAB5" stroke-width="12" stroke-linecap="round"/>
+        <line x1="102" y1="108" x2="132" y2="82" stroke="#FFDAB5" stroke-width="12" stroke-linecap="round"/>
+        <!-- dancing legs -->
+        <line x1="65" y1="150" x2="48" y2="182" stroke="#FFDAB5" stroke-width="12" stroke-linecap="round"/>
+        <line x1="95" y1="150" x2="115" y2="178" stroke="#FFDAB5" stroke-width="12" stroke-linecap="round"/>
+
+        <!-- Dancing person 2 (kid) -->
+        <circle cx="155" cy="80" r="21" fill="#FFEAA0"/>
+        <path d="M135 73 Q155 52 175 73" fill="#4a2f0d" opacity="0.7"/>
+        <circle cx="146" cy="77" r="4.5" fill="white"/><circle cx="146" cy="77" r="3" fill="#222"/>
+        <circle cx="164" cy="77" r="4.5" fill="white"/><circle cx="164" cy="77" r="3" fill="#222"/>
+        <path d="M144 91 Q155 99 166 91" stroke="#FF7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <rect x="135" y="100" width="40" height="52" rx="10" fill="#C77DFF"/>
+        <line x1="135" y1="114" x2="110" y2="95" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+        <line x1="175" y1="114" x2="200" y2="95" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+        <line x1="143" y1="152" x2="130" y2="180" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+        <line x1="167" y1="152" x2="183" y2="178" stroke="#FFEAA0" stroke-width="11" stroke-linecap="round"/>
+
+        <!-- Dancing person 3 -->
+        <circle cx="230" cy="68" r="23" fill="#FFD0C0"/>
+        <path d="M207 60 Q230 36 253 60 L255 78 Q230 93 205 78Z" fill="#8B4513" opacity="0.7"/>
+        <circle cx="221" cy="65" r="5" fill="white"/><circle cx="221" cy="65" r="3" fill="#222"/>
+        <circle cx="239" cy="65" r="5" fill="white"/><circle cx="239" cy="65" r="3" fill="#222"/>
+        <path d="M219 80 Q230 88 241 80" stroke="#FF7043" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="208" y="90" width="44" height="58" rx="11" fill="#6BCB77"/>
+        <line x1="208" y1="106" x2="180" y2="90" stroke="#FFD0C0" stroke-width="12" stroke-linecap="round"/>
+        <line x1="252" y1="106" x2="278" y2="85" stroke="#FFD0C0" stroke-width="12" stroke-linecap="round"/>
+        <line x1="215" y1="148" x2="200" y2="180" stroke="#FFD0C0" stroke-width="12" stroke-linecap="round"/>
+        <line x1="245" y1="148" x2="260" y2="178" stroke="#FFD0C0" stroke-width="12" stroke-linecap="round"/>
+      </svg>
+
+      <div class="page-subtext" style="color:#8a003a;">Turn up the music and DANCE! Laughing together fills the whole house with sunshine! ☀️😂</div>
+    </div>
+
+    <!-- ══ PAGE 7 ══ -->
+    <div class="page page-last" id="page-7">
+      <div class="star" style="top:8%;left:6%;animation-duration:8s;font-size:2rem">⭐</div>
+      <div class="star" style="top:12%;right:8%;animation-duration:5s;font-size:1.8rem">🌟</div>
+      <div class="star" style="bottom:22%;left:10%;animation-duration:7s;font-size:1.6rem">✨</div>
+      <div class="star" style="bottom:18%;right:6%;animation-duration:6s;font-size:2rem">⭐</div>
+
+      <svg class="illustration" width="250" height="175" viewBox="0 0 250 175">
+        <!-- Big heart -->
+        <path d="M125,155 C125,155 20,95 20,55 C20,30 42,12 68,20 C90,27 110,48 125,65 C140,48 160,27 182,20 C208,12 230,30 230,55 C230,95 125,155 125,155Z" fill="#FF6B9D" opacity="0.9"/>
+        <path d="M125,140 C125,140 38,88 38,53 C38,35 55,22 75,28 C95,35 113,53 125,68 C137,53 155,35 175,28 C195,22 212,35 212,53 C212,88 125,140 125,140Z" fill="#FF9DC0" opacity="0.6"/>
+
+        <!-- Family faces inside heart -->
+        <!-- Dad -->
+        <circle cx="90" cy="68" r="18" fill="#FFDAB5"/>
+        <circle cx="83" cy="65" r="3.5" fill="#222"/>
+        <circle cx="97" cy="65" r="3.5" fill="#222"/>
+        <path d="M82 77 Q90 84 98 77" stroke="#FF7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+        <!-- Mom -->
+        <circle cx="160" cy="68" r="18" fill="#FFD0C0"/>
+        <path d="M142 62 Q160 44 178 62 L180 76 Q160 88 140 76Z" fill="#8B4513" opacity="0.6" transform="scale(0.85) translate(22,12)"/>
+        <circle cx="153" cy="65" r="3.5" fill="#222"/>
+        <circle cx="167" cy="65" r="3.5" fill="#222"/>
+        <path d="M152 77 Q160 84 168 77" stroke="#FF7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+        <!-- Kid center -->
+        <circle cx="125" cy="95" r="17" fill="#FFEAA0"/>
+        <circle cx="118" cy="92" r="3" fill="#222"/>
+        <circle cx="132" cy="92" r="3" fill="#222"/>
+        <path d="M116 104 Q125 111 134 104" stroke="#FF7043" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <div class="page-text" style="color:#b34a00; margin-top:8px;">Family is the BEST thing ever! ❤️</div>
+      <div class="page-subtext" style="color:#8a3a00; font-size:1.05rem;">No matter where you go or what you do — family will always be right there, loving you! 🏠💛</div>
+      <div style="margin-top:14px; font-family:'Fredoka One',cursive; font-size:1.2rem; color:#e06000;">
+        THE END 🌈
+      </div>
+    </div>
+
+  </div><!-- /book -->
+
+  <!-- Navigation -->
+  <div class="nav">
+    <button class="btn btn-prev" id="btnPrev" onclick="changePage(-1)" disabled>◀ Back</button>
+    <div class="page-dots" id="dots"></div>
+    <button class="btn btn-next" id="btnNext" onclick="changePage(1)">Next ▶</button>
+  </div>
+  <div class="page-num" id="pageNum">Page 1 of 8</div>
+</div>
+
+<script>
+  const totalPages = 8;
+  let current = 0;
+
+  // Build dots
+  const dotsEl = document.getElementById('dots');
+  for (let i = 0; i < totalPages; i++) {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  }
+
+  function goTo(n) {
+    document.getElementById('page-' + current).classList.remove('active');
+    dotsEl.children[current].classList.remove('active');
+    current = n;
+    document.getElementById('page-' + current).classList.add('active');
+    dotsEl.children[current].classList.add('active');
+    document.getElementById('btnPrev').disabled = current === 0;
+    document.getElementById('btnNext').disabled = current === totalPages - 1;
+    document.getElementById('pageNum').textContent =
+      current === 0 ? 'Cover' : `Page ${current} of ${totalPages - 1}`;
+  }
+
+  function changePage(dir) { goTo(current + dir); }
+</script>
+</body>
+</html></span>
       </div>
     </div>
 
